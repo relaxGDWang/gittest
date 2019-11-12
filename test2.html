@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>测试颜色获取器</title>
+    <link rel="stylesheet" href="library/style/font-awesome.css"/>
+    <link rel="stylesheet" href="library/style/elementui2.4.11.css"/>
+    <link rel="stylesheet" href="library/style/animate.css"/>
+    <link rel="stylesheet" href="library/style/cssreset3.css"/>
+<style type="text/css">
+.show{ border:1px solid #ccc; padding:5px; width:780px; height:50px; margin:50px auto;}
+.show li{ height:100%; width:2px; float:left;}
+</style>
+</head>
+<body>
+	<ul class="show nohead"></ul>
+<script src="library/js/jquery.min.js"></script>
+<script>
+var list=[];
+var dom=$('.show').eq(0);
+for (var i=0; i<=255; i+=4){
+	var color={r:255,g:0,b:i};
+	var colorStr=getColorStr(color);
+	var li=document.createElement('li');
+	dom.append(li);
+	$(li).css('background',colorStr);
+}
+for (var i=0; i<=255; i+=4){
+	var color={r:255,g:0,b:255};
+	color.r-=(i+1);
+	var colorStr=getColorStr(color);
+	var li=document.createElement('li');
+	dom.append(li);
+	$(li).css('background',colorStr);
+}
+for (var i=0; i<=255; i+=4){
+	var color={r:0,g:i,b:255};
+	var colorStr=getColorStr(color);
+	var li=document.createElement('li');
+	dom.append(li);
+	$(li).css('background',colorStr);
+}
+for (var i=0; i<=255; i+=4){
+	var color={r:0,g:255,b:255};
+	color.b-=(i+1);
+	var colorStr=getColorStr(color);
+	var li=document.createElement('li');
+	dom.append(li);
+	$(li).css('background',colorStr);
+}
+for (var i=0; i<=255; i+=4){
+	var color={r:i,g:255,b:0};
+	var colorStr=getColorStr(color);
+	var li=document.createElement('li');
+	dom.append(li);
+	$(li).css('background',colorStr);
+}
+for (var i=0; i<=255; i+=4){
+	var color={r:255,g:255,b:0};
+	color.g-=(i+1);
+	var colorStr=getColorStr(color);
+	var li=document.createElement('li');
+	dom.append(li);
+	$(li).css('background',colorStr);
+}
+
+
+//按颜色对象获得颜色16进制字符串
+function getColorStr(color){
+	var returnColor=(color.r<<16)+(color.g<<8)+color.b;
+	returnColor=returnColor.toString(16);
+	while(returnColor.length<6){
+		returnColor="0"+returnColor;
+	}
+	return returnColor="#"+returnColor;
+}
+
+//继续进行中
+</script>
+</body>
+</html>

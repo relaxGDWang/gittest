@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>测试VUE的模板</title>
+    <link rel="stylesheet" href="library/style/font-awesome.css"/>
+    <link rel="stylesheet" href="library/style/elementui2.4.11.css"/>
+    <link rel="stylesheet" href="library/style/animate.css"/>
+    <link rel="stylesheet" href="library/style/cssreset3.css"/>
+<style type="text/css">
+.outframe{ margin:10%; padding:20px; border:1px solid #ccc;}
+</style>
+</head>
+<body>
+	<div class="outframe" id="app">
+		<select v-model="nowSelect">
+			<option value=""></option>
+			<option v-for="item in optionArray" :value="item.value">{{item.txt}}</option>
+		</select>
+	</div>
+<script src="library/js/jquery.min.js"></script>
+<script src="library/js/vue.min.js"></script>
+<script>
+var vu=new Vue({
+	el: '#app',
+	data:{
+		nowSelect:'',
+		optionArray:[
+			{txt:'模板1',value:'temp1'},
+			{txt:'模板2',value:'temp2'}
+		],
+		coreData:{
+			title:'客户A的报价信息表',
+			product:[
+				{number:'101712',brand:'LATTY',type:'盘根',model:'LATTY flon 4488',size:{w:4,h:4,l:35},weight:'0.8kg',material:['芳纶','碳纤维'],unit:'盒',price:'4200',count:1},
+				{number:'101491',brand:'LATTY',type:'盘根',model:'LATTY flon 4488',size:{w:6,h:6,l:20},weight:'1.12kg',material:['芳纶','碳纤维'],unit:'盒',price:'4512',count:2},
+			]
+		}
+	},
+	methods:{
+	}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>表格的colgroup和col的测试点</title>
+    <link rel="stylesheet" href="library/style/font-awesome.css"/>
+    <link rel="stylesheet" href="library/style/elementui2.4.11.css"/>
+    <link rel="stylesheet" href="library/style/animate.css"/>
+    <link rel="stylesheet" href="library/style/cssreset3.css"/>
+<style type="text/css">
+body{ background-color:#fff; text-align:center;}
+.show{ width:800px; margin:10px auto;}
+.show table{ width:100%;}
+.show th{ background-color:#999; color:#fff;}
+.show td{ border:1px solid #ccc;}
+
+.test{ color:red; background-color:#f90; font-size:20px; text-align:left; cursor:pointer;}
+.test:hover{ background-color:green;}
+</style>
+</head>
+<body>
+	<div class="show">
+		<table>
+			<caption>学生成绩表</caption>
+			<colgroup span="3" class="test">
+				<col colspan="2" style="background:green;"/>
+				<col/>
+				<col style="background:red;"/>
+			</colgroup>
+			<colgroup span="2">
+				<col width="100" class="test"/>
+				<col width="100"/>
+			</colgroup>
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>姓名</th>
+					<th>语文</th>
+					<th>数学</th>
+					<th>体育</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>李明公</td>
+					<td>89</td>
+					<td>100</td>
+					<td>60</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>关鸥南</td>
+					<td>68</td>
+					<td>92</td>
+					<td>70</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>孙全美</td>
+					<td>82</td>
+					<td>88</td>
+					<td>91</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2">平均分</td>
+					<td>89</td>
+					<td>90</td>
+					<td>82</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+</body>
+</html>
